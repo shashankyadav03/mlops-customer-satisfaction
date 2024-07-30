@@ -83,15 +83,15 @@ class DataCleaning:
         Args:
             strategy: Data cleaning strategy.
         """
-        self.data = path
+        self.path = path
         self.strategy = strategy
 
-    def execute_strategy(self, path: pd.DataFrame) -> Union[pd.DataFrame, pd.Series]:
+    def execute_strategy(self, data: pd.DataFrame) -> Union[pd.DataFrame, pd.Series]:
         """"
         Execute the data cleaning strategy.
         """
         try:
-            return self.strategy.handle_data(path)
+            return self.strategy.handle_data(data)
         except Exception as e:
             logging.error(f"Error in executing strategy: {e}")
             raise e

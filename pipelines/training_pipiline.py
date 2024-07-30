@@ -14,6 +14,6 @@ def training_pipeline(path: str) -> None:
 
     """
     df = ingest_data(path)
-    clean_data(df)
-    train_model(df)
-    evaluate_model(df)
+    X_train, X_test, y_train, y_test = clean_data(df)
+    model = train_model(X_train, X_test, y_train, y_test)
+    mse, rmse, r2 = evaluate_model(model, X_test, y_test)
