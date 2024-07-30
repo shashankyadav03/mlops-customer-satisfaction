@@ -10,3 +10,4 @@ pandas
 numpy
 scikit-learn
 requests
+mlflow
